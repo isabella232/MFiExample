@@ -1,7 +1,7 @@
 binary "https://s3.eu-central-1.amazonaws.com/dronecode-sdk/backend.json" "0.18.3"
 github "AFNetworking/AFNetworking" "3.2.1"
 github "ReactiveX/RxSwift" "5.0.1"
-github "YUNEEC/Yuneec-MFiAdapter" "833cba300b168228d5f2a2d30e5b01921624d478"
+github "YUNEEC/Yuneec-MFiAdapter" "388a96bdc686f91a16967c3642da5924497c0055"
 github "jonasvautherin/grpc-swift" "820730e24b9cf035b2889b30d2fe87411e041720"
 github "mavlink/MAVSDK-Swift" "0.6.0"
 github "robbiehanson/CocoaAsyncSocket" "7.6.3"

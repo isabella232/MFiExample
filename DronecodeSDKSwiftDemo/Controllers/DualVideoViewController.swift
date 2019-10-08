@@ -27,14 +27,14 @@ class DualVideoViewController: UIViewController {
         super.viewWillAppear(animated)
 
         self.tabBarController?.tabBar.isHidden = true
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         self.tabBarController?.tabBar.isHidden = false
-        NotificationCenter.default.removeObserver(self, name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     @IBAction func startSingleVideo(_ sender: UIButton) {
@@ -47,11 +47,12 @@ class DualVideoViewController: UIViewController {
         self.startSingleVideoButton.isEnabled = false
         self.startDualVideoButton.isEnabled = false
         self.stopVideoButton.isEnabled = true
+        preivewView.scaleMode = .aspectFit
     }
 
     @IBAction func startDualVideo(_ sender: UIButton) {
         self.setDisplayRect()
-        MFiAdapter.MFiPreviewViewAdapter.sharedInstance().startDualVideo(self.preivewView) { (result) in
+        MFiAdapter.MFiPreviewViewAdapter.sharedInstance().startThermalVideo(self.preivewView) { (result) in
             if let result = result {
                 print(result)
             }

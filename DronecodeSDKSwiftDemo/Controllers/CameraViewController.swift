@@ -65,8 +65,8 @@ class CameraViewController: UIViewController {
             return
         }
         
-        addChildViewController(videoFeedViewController)
-        videoFeedViewController.didMove(toParentViewController: self)
+        addChild(videoFeedViewController)
+        videoFeedViewController.didMove(toParent: self)
         
         if let videoFeedSubview = videoFeedViewController.view {
             containerView.addSubview(videoFeedSubview)

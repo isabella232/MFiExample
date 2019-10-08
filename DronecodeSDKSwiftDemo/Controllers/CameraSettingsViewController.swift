@@ -19,7 +19,7 @@ class CameraSettingsViewController: FormViewController {
     var currentSettings = BehaviorRelay<[Camera.Setting]>(value: [])
     var possibleSettingOptions = BehaviorRelay<[Camera.SettingOptions]>(value: [])
     
-    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let activityView = UIActivityIndicatorView(style: .gray)
     
     let disposeBag = DisposeBag()
 
@@ -57,7 +57,7 @@ class CameraSettingsViewController: FormViewController {
                 $0.options = setting.options.compactMap {  $0.optionDescription  }
                 $0.onChange { [weak self] pushRow in
                     
-                    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    let activityView = UIActivityIndicatorView(style: .gray)
                     activityView.hidesWhenStopped = true
                     
                     self?.tableView.tableHeaderView = activityView

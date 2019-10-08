@@ -326,8 +326,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Helper methods
     
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius, regionRadius)
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -355,7 +355,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         let missionTrace = MKPolyline(coordinates: points, count: listMissionsItems.count)
-        mapView.add(missionTrace)
+        mapView.addOverlay(missionTrace)
         
         // add start pin
         let point1 = CustomPointAnnotation(title: "START")
